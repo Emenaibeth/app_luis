@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="title">
+    <h1>Mis Tareas</h1>
+</div>
+
+{% for tarea in task %}
+<div class="tasks">
+    {% if tarea.done == False %}
+    <div class="task">
+        <h2>&#x23F0;{{tarea.title}} - {{tarea.project_id}}</h2>
+        <p class="status">Tarea Pendiente</p>
+        <p>{{tarea.descripcion}}</p>
+        <div class="btn">
+            <button class="opcion delete">Delete</button>
+            <button class="opcion done">✅Done</button>
+        </div>
+        <br><br><br>
+    </div>
+    {% else %}
+    <div class="task">
+        <h2>✅{{tarea.title}} - {{tarea.project_id}}</h2>
+        <p class="status">Tarea Realizada</p>
+        <p>{{tarea.descripcion}}</p>
+        <div class="btn">
+            <button class="opcion delete">Delete</button>
+            <button class="opcion done">✅Done</button>
+        </div>
+        <br><br><br>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endfor %}
+
+<script src="{% static 'js/task.js' %}"></script>
+
+{% endblock %}

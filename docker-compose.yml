@@ -1,0 +1,13 @@
+version: '3.13-slim'
+
+services:
+  web:
+    build: .
+    volumes:
+      - mydata:/db.sqlite3
+    ports:
+      - "40000:40000"
+    environment:
+      - PYTHONUNBUFFERED=1
+volumes:
+  mydata:

@@ -1,0 +1,22 @@
+# Python
+pycache/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Django
+db.sqlite3
+/media/
+/static/
+*.log
+
+# Docker
+.dockerignore # Este es para Docker, no para Git. Si quieres ignorarlo en Git, descomenta.
+!Dockerfile
+!docker-compose.yml
+
+# Virtual Environment
+.env
