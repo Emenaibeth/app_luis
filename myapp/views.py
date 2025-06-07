@@ -8,7 +8,7 @@ from .forms import CreateNewTask, CreateNewProject
 # Create your views here.
 def index(request):
     #return HttpResponse("Index Page") para retornar string
-    title = "Curso Django APP Tareas!!"
+    title = "APP Tareas!!"
     return render(request, 'index.html', {'title': title}) #renderizamos un archivo html
 
 def about(request):
